@@ -1,0 +1,26 @@
+# ==========================================
+# CITY CONNECT OMEGA - DEPENDENCIES
+# ==========================================
+
+# 1. Agentic AI & LLM Engine (Highly Stable Core)
+crewai
+crewai-tools
+litellm
+pysqlite3-binary
+python-dotenv
+
+# 2. Swarm Intelligence & Physics Simulation
+networkx
+numpy
+pandas
+ray
+
+# 3. Digital Twin Command Center (UI)
+streamlit
+plotly
+
+# 4. Web & Event Bus (For Phase 4 Deployment)
+fastapi
+uvicorn
+httpx
+kafka-python
