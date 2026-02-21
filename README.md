@@ -1,13 +1,35 @@
 # city-connect-omega
 An autonomous, multi-agent swarm control plane for mission-critical Smart City IoT and Defense logistics. Built with Agentic AI (LangGraph/CrewAI) for decision-making and Swarm Intelligence (ACO) for dynamic, self-healing routing under adversarial conditions. Features a Human-on-the-Loop (HOTL) veto protocol for operational safety.
 
-# 🛡️ City Connect Omega: Autonomous Distributed Defense Grid
+# 🛡️ City Connect Omega: Prime Edition- Autonomous Distributed Defense Grid & Multi-Agent Orchestrator
 
-**City Connect Omega** is a high-fidelity orchestration engine designed for mission-critical IoT networks. It fuses **Agentic AI** (Llama-3.3) for tactical reasoning with **Unsupervised Machine Learning** (Isolation Forest) for zero-day anomaly detection and **Swarm Intelligence** (ACO) for dynamic asset rerouting.
+**City Connect Omega: Prime** is a high-fidelity orchestration engine designed for mission-critical IoT networks. It fuses **Agentic AI** (Llama-3.3) for tactical reasoning with **Unsupervised Machine Learning** (Isolation Forest) for zero-day anomaly detection and **Swarm Intelligence** (ACO) for dynamic asset rerouting.It is a research-grade orchestration engine designed for high-stakes IoT infrastructure and autonomous defense grids. It utilizes Distributed Microservices to decouple physical asset simulation from cognitive AI reasoning.
 
 
 
 ## 🧠 System Architecture
+
+🏗️ 1. System Architecture
+The following diagram illustrates the distributed "OODA Loop" (Observe, Orient, Decide, Act) that powers the city grid.
+
+Code snippet
+graph TD
+    subgraph "The World (Kinematic Physical Layer)"
+        A[City Grid Simulation] -->|Telemetry Stream| B{ML Predictive Cortex}
+    end
+
+    subgraph "The Brain (Cognitive Layer)"
+        B -->|Anomaly Score < 0| C[Oracle Diagnosis Agent]
+        C -->|Tactical Brief| D[Executive Commander]
+    end
+
+    subgraph "The Shield (Governance Layer)"
+        D -->|Proposed Action| E[Human-on-the-Loop Veto]
+        E -->|Approved| F[Swarm ACO Reroute]
+        E -->|Vetoed| G[System Log Only]
+    end
+
+    F -->|Command Execution| A
 The project is built on a **Distributed Microservice Architecture**, decoupling physical simulation from cognitive reasoning to ensure enterprise-grade scalability.
 
 1. **Physical Physics Layer (`api_server.py`)**: A Kinematic engine simulating 5 moving IoT nodes in a 1000x1000m coordinate space.
@@ -16,7 +38,42 @@ The project is built on a **Distributed Microservice Architecture**, decoupling 
 4. **Governance Protocol (`veto_protocol.py`)**: A deterministic Human-on-the-Loop (HOTL) interface requiring explicit "YES/NO" authorization for tactical actions.
 5. **Digital Twin Dashboard (`dashboard.py`)**: A high-performance 3D visualization using PyDeck and Streamlit.
 
+
+🧠 2. Decision Logic FlowThis sequence diagram tracks the sub-millisecond communication between the AI models and the Human Commander during a zero-day attack.Code snippetsequenceDiagram
+    autonumber
+    participant G as IoT City Grid
+    participant M as ML Cortex (Isolation Forest)
+    participant O as Oracle Agent (Llama-3.3)
+    participant H as Human Commander (Veto Protocol)
+    participant S as Swarm Router (ACO)
+
+    G->>M: Push Telemetry
+    M-->>M: Compute Anomaly Score
+    Note over M: Score drops below -0.05
+    M->>O: Wake Agent (High Priority)
+    O-->>O: Formulate Tactical Brief
+    O->>H: Request Authorization
+    H->>H: Review AI Reasoning
+    alt Approved (YES)
+        H->>S: Engage Swarm Intelligence
+        S->>G: Deploy Countermeasures
+    else Vetoed (NO)
+        H->>G: Maintain Status Quo
+    end
+📊 3. Scientific Mathematical PillarsI. Behavioral Anomaly DetectionInstead of hardcoded rules, the Predictive Cortex uses an Isolation Forest algorithm to detect stealth threats. It isolates anomalies by measuring the path length $h(x)$ to a specific data point.$$s(x, n) = 2^{-\frac{E(h(x))}{c(n)}}$$Where $s$ is the anomaly score; if $s \to 1$, the node is flagged for Agentic review.II. Decentralized Swarm RoutingWhen an asset is rerouted, the Ant Colony Optimization (ACO) engine calculates paths based on pheromone density ($\tau$) and safety visibility ($\eta$):$$p_{ij}^k = \frac{[\tau_{ij}]^\alpha [\eta_{ij}]^\beta}{\sum_{l \in \mathcal{N}_i^k} [\tau_{il}]^\alpha [\eta_{il}]^\beta}$$
+
+🚀 4. Mission-Critical Features
+3D Digital Twin: Real-time asset visualization via PyDeck and Streamlit.
+
+Zero-Day ML: Behavioral analysis that catches attacks before they fully crash a node.
+
+Distributed API: Decoupled backend architecture using FastAPI and Uvicorn.
+
+Scientific Audit: Automatic generation of post-incident reports in PDF/Markdown.
+
 ## 🧮 Mathematical Foundations
+
+📊 3. Scientific Mathematical PillarsI. Behavioral Anomaly DetectionInstead of hardcoded rules, the Predictive Cortex uses an Isolation Forest algorithm to detect stealth threats. It isolates anomalies by measuring the path length $h(x)$ to a specific data point.$$s(x, n) = 2^{-\frac{E(h(x))}{c(n)}}$$Where $s$ is the anomaly score; if $s \to 1$, the node is flagged for Agentic review.II. Decentralized Swarm RoutingWhen an asset is rerouted, the Ant Colony Optimization (ACO) engine calculates paths based on pheromone density ($\tau$) and safety visibility ($\eta$):$$p_{ij}^k = \frac{[\tau_{ij}]^\alpha [\eta_{ij}]^\beta}{\sum_{l \in \mathcal{N}_i^k} [\tau_{il}]^\alpha [\eta_{il}]^\beta}$$
 
 ### 1. Swarm Routing (Ant Colony Optimization)
 The system bypasses compromised nodes by simulating "digital pheromones" ($\tau$) and heuristic visibility ($\eta$):
