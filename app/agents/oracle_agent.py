@@ -3,6 +3,7 @@ import sys
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 import os
+import chromadb
 from dotenv import load_dotenv
 from crewai import Agent, Task, Crew, Process, LLM
 from crewai.tools import tool
@@ -23,7 +24,31 @@ governance_layer = VetoProtocol()
 iot_grid.inject_anomaly(target_node=2, anomaly_type="DDoS_ATTACK")
 
 # ==========================================
-# 1. DEFINE THE CUSTOM SENSORY TOOLS
+# 1. INITIALIZE VECTOR MEMORY (CHROMADB)
+# ==========================================
+print("[SYSTEM] Booting Episodic Vector Memory Cortex...")
+
+# PersistentClient ensures the AI remembers past runs even if you restart the server
+chroma_client = chromadb.PersistentClient(path="./omega_memory")
+memory_collection = chroma_client.get_or_create_collection(name="threat_signatures")
+
+# Pre-seed the memory so the AI has "experience" to draw from on its first run
+if memory_collection.count() == 0:
+    print("[SYSTEM] First boot detected. Seeding Vector DB with historical defense logs...")
+    memory_collection.add(
+        documents=[
+            "Node status COMPROMISED. High network latency > 500ms. Resource capacity dropped below 20%.",
+            "Node status COMPROMISED. Zero network latency. Resource capacity at 0%."
+        ],
+        metadatas=[
+            {"anomaly": "DDoS_ATTACK", "proven_countermeasure": "Isolate node from swarm routing and reboot firewall."},
+            {"anomaly": "POWER_FAILURE", "proven_countermeasure": "Reroute power from adjacent grid and dispatch physical maintenance drone."}
+        ],
+        ids=["incident_alpha", "incident_beta"]
+    )
+
+# ==========================================
+# 2. DEFINE THE SENSORY & COGNITIVE TOOLS
 # ==========================================
 
 @tool("Fetch IoT Telemetry")
@@ -35,36 +60,55 @@ def fetch_iot_telemetry(query: str = "all") -> str:
     data = iot_grid.fetch_live_telemetry()
     return f"Live Grid Data: {data}"
 
+@tool("Search Historical Threats")
+def search_historical_threats(anomaly_description: str) -> str:
+    """
+    Searches the Vector Database (Long-Term Memory) for historical telemetry signatures
+    that match the current anomaly. Returns proven countermeasures if a match is found.
+    """
+    results = memory_collection.query(
+        query_texts=[anomaly_description],
+        n_results=1
+    )
+    
+    if results and results['documents'] and results['documents'][0]:
+        historical_match = results['documents'][0][0]
+        metadata = results['metadatas'][0][0]
+        distance = results['distances'][0][0] # Lower distance = closer semantic match
+        
+        return f"HISTORICAL MATCH FOUND (Semantic Distance: {round(distance, 2)}).\nPast Signature: {historical_match}\nVerified Anomaly: {metadata['anomaly']}\nRecommended Countermeasure: {metadata['proven_countermeasure']}"
+            
+    return "No historical matches found. This is a Zero-Day anomaly."
+
 # ==========================================
-# 2. DEFINE THE AGENT (THE PERSONA & LOGIC)
+# 3. DEFINE THE AGENT (THE PERSONA & LOGIC)
 # ==========================================
 
 def create_oracle_agent() -> Agent:
-    """Instantiates the Oracle Agent using CrewAI's native Groq integration (bypassing LangChain)."""
+    """Instantiates the Oracle Agent using CrewAI's native Groq integration."""
     
-    # Initialize the Groq inference engine natively
     groq_llm = LLM(
         model="groq/llama-3.3-70b-versatile", 
         api_key=os.getenv("GROQ_API_KEY"),
-        temperature=0.1 # Keep it highly deterministic for strict threat analysis
+        temperature=0.0 # Zero temperature for absolute precision in memory retrieval
     )
 
     return Agent(
         role="Lead Threat Intelligence Oracle",
-        goal="Continuously monitor IoT network telemetry, detect adversarial anomalies (like DDoS or Power Failures), and formulate a precise diagnostic report.",
+        goal="Monitor IoT telemetry, query the Vector Memory for historical matches, and formulate a precise, data-backed diagnostic report.",
         backstory=dedent("""
             You are a highly advanced AI diagnostic node operating within the City Connect Omega defense grid. 
-            Your primary objective is zero-latency threat detection. You do not panic; you analyze raw telemetry, 
-            identify compromised nodes, and prepare structured intelligence for the Executive Agent to review.
+            You possess Long-Term Vector Memory. You do not guess. When you spot an anomaly, you immediately 
+            query your historical database to see if this attack vector has been defeated before.
         """),
         verbose=True,
         allow_delegation=False,
-        tools=[fetch_iot_telemetry],
-        llm=groq_llm # Bind the native Groq engine
+        tools=[fetch_iot_telemetry, search_historical_threats],
+        llm=groq_llm 
     )
 
 # ==========================================
-# 3. DEFINE THE TASK & EXECUTION LOOP
+# 4. DEFINE THE TASK & EXECUTION LOOP
 # ==========================================
 
 def run_oracle_diagnosis():
@@ -73,10 +117,11 @@ def run_oracle_diagnosis():
     diagnostic_task = Task(
         description=dedent("""
             1. Use the 'Fetch IoT Telemetry' tool to pull the current state of the grid.
-            2. Analyze the data for any nodes showing a status other than 'OPERATIONAL', high threat levels, or anomalous latency.
-            3. Output a structured Threat Report detailing the compromised Node ID, the suspected anomaly, and a recommended preliminary action.
+            2. Identify any specific node showing anomalous behavior (e.g., COMPROMISED status, high latency).
+            3. Extract the exact telemetry values of the compromised node and pass them into the 'Search Historical Threats' tool.
+            4. Output a structured Threat Report detailing the compromised Node ID, the suspected anomaly, and the recommended action specifically drawn from your Vector Memory.
         """),
-        expected_output="A structured 3-bullet point Threat Report identifying the compromised node and the anomaly type.",
+        expected_output="A structured Threat Report identifying the node, the exact telemetry, the historical match, and the proven countermeasure.",
         agent=oracle
     )
 
@@ -87,11 +132,11 @@ def run_oracle_diagnosis():
         verbose=True
     )
 
-    print("\n[SYSTEM] Booting City Connect Omega Oracle Agent (Powered by Native Groq)...\n")
+    print("\n[SYSTEM] Booting City Connect Omega Oracle Agent (Powered by Groq + ChromaDB)...\n")
     result = diagnostic_crew.kickoff()
     
     print("\n==============================================")
-    print("FINAL ORACLE THREAT REPORT")
+    print("FINAL ORACLE THREAT REPORT (RAG-ENHANCED)")
     print("==============================================")
     print(result)
 

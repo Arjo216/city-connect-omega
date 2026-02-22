@@ -1,119 +1,120 @@
-# city-connect-omega
-An autonomous, multi-agent swarm control plane for mission-critical Smart City IoT and Defense logistics. Built with Agentic AI (LangGraph/CrewAI) for decision-making and Swarm Intelligence (ACO) for dynamic, self-healing routing under adversarial conditions. Features a Human-on-the-Loop (HOTL) veto protocol for operational safety.
+<div align="center">
+  
+# 🛡️ City Connect Omega: Prime Edition
+### *Autonomous Cyber-Physical Defense Grid with Continuous Vector Learning*
 
-# 🛡️ City Connect Omega: Prime Edition- Autonomous Distributed Defense Grid & Multi-Agent Orchestrator
+  <img src="https://img.shields.io/badge/Python-3.11+-blue?style=for-the-badge&logo=python" alt="Python">
+  <img src="https://img.shields.io/badge/Agentic_AI-Llama--3.3-orange?style=for-the-badge" alt="Agentic AI">
+  <img src="https://img.shields.io/badge/Memory-ChromaDB_Vector_Cortex-purple?style=for-the-badge" alt="ChromaDB">
+  <img src="https://img.shields.io/badge/Swarm-ACO_Optimized-green?style=for-the-badge" alt="Swarm Intelligence">
 
-**City Connect Omega: Prime** is a high-fidelity orchestration engine designed for mission-critical IoT networks. It fuses **Agentic AI** (Llama-3.3) for tactical reasoning with **Unsupervised Machine Learning** (Isolation Forest) for zero-day anomaly detection and **Swarm Intelligence** (ACO) for dynamic asset rerouting.It is a research-grade orchestration engine designed for high-stakes IoT infrastructure and autonomous defense grids. It utilizes Distributed Microservices to decouple physical asset simulation from cognitive AI reasoning.
-
-
-
-## 🧠 System Architecture
-
-🏗️ 1. System Architecture
-The following diagram illustrates the distributed "OODA Loop" (Observe, Orient, Decide, Act) that powers the city grid.
-
-Code snippet
-graph TD
-    subgraph "The World (Kinematic Physical Layer)"
-        A[City Grid Simulation] -->|Telemetry Stream| B{ML Predictive Cortex}
-    end
-
-    subgraph "The Brain (Cognitive Layer)"
-        B -->|Anomaly Score < 0| C[Oracle Diagnosis Agent]
-        C -->|Tactical Brief| D[Executive Commander]
-    end
-
-    subgraph "The Shield (Governance Layer)"
-        D -->|Proposed Action| E[Human-on-the-Loop Veto]
-        E -->|Approved| F[Swarm ACO Reroute]
-        E -->|Vetoed| G[System Log Only]
-    end
-
-    F -->|Command Execution| A
-The project is built on a **Distributed Microservice Architecture**, decoupling physical simulation from cognitive reasoning to ensure enterprise-grade scalability.
-
-1. **Physical Physics Layer (`api_server.py`)**: A Kinematic engine simulating 5 moving IoT nodes in a 1000x1000m coordinate space.
-2. **Predictive ML Cortex (`predictive_cortex.py`)**: An Isolation Forest model trained on 1,000 hours of baseline telemetry to identify stealth threats before they crash the network.
-3. **Agentic Cognitive Layer (`oracle_agent.py`)**: Powered by CrewAI and Groq, specialized agents diagnose and formulate response strategies.
-4. **Governance Protocol (`veto_protocol.py`)**: A deterministic Human-on-the-Loop (HOTL) interface requiring explicit "YES/NO" authorization for tactical actions.
-5. **Digital Twin Dashboard (`dashboard.py`)**: A high-performance 3D visualization using PyDeck and Streamlit.
-
-
-🧠 2. Decision Logic FlowThis sequence diagram tracks the sub-millisecond communication between the AI models and the Human Commander during a zero-day attack.Code snippetsequenceDiagram
-    autonumber
-    participant G as IoT City Grid
-    participant M as ML Cortex (Isolation Forest)
-    participant O as Oracle Agent (Llama-3.3)
-    participant H as Human Commander (Veto Protocol)
-    participant S as Swarm Router (ACO)
-
-    G->>M: Push Telemetry
-    M-->>M: Compute Anomaly Score
-    Note over M: Score drops below -0.05
-    M->>O: Wake Agent (High Priority)
-    O-->>O: Formulate Tactical Brief
-    O->>H: Request Authorization
-    H->>H: Review AI Reasoning
-    alt Approved (YES)
-        H->>S: Engage Swarm Intelligence
-        S->>G: Deploy Countermeasures
-    else Vetoed (NO)
-        H->>G: Maintain Status Quo
-    end
-📊 3. Scientific Mathematical PillarsI. Behavioral Anomaly DetectionInstead of hardcoded rules, the Predictive Cortex uses an Isolation Forest algorithm to detect stealth threats. It isolates anomalies by measuring the path length $h(x)$ to a specific data point.$$s(x, n) = 2^{-\frac{E(h(x))}{c(n)}}$$Where $s$ is the anomaly score; if $s \to 1$, the node is flagged for Agentic review.II. Decentralized Swarm RoutingWhen an asset is rerouted, the Ant Colony Optimization (ACO) engine calculates paths based on pheromone density ($\tau$) and safety visibility ($\eta$):$$p_{ij}^k = \frac{[\tau_{ij}]^\alpha [\eta_{ij}]^\beta}{\sum_{l \in \mathcal{N}_i^k} [\tau_{il}]^\alpha [\eta_{il}]^\beta}$$
-
-🚀 4. Mission-Critical Features
-3D Digital Twin: Real-time asset visualization via PyDeck and Streamlit.
-
-Zero-Day ML: Behavioral analysis that catches attacks before they fully crash a node.
-
-Distributed API: Decoupled backend architecture using FastAPI and Uvicorn.
-
-Scientific Audit: Automatic generation of post-incident reports in PDF/Markdown.
-
-## 🧮 Mathematical Foundations
-
-📊 3. Scientific Mathematical PillarsI. Behavioral Anomaly DetectionInstead of hardcoded rules, the Predictive Cortex uses an Isolation Forest algorithm to detect stealth threats. It isolates anomalies by measuring the path length $h(x)$ to a specific data point.$$s(x, n) = 2^{-\frac{E(h(x))}{c(n)}}$$Where $s$ is the anomaly score; if $s \to 1$, the node is flagged for Agentic review.II. Decentralized Swarm RoutingWhen an asset is rerouted, the Ant Colony Optimization (ACO) engine calculates paths based on pheromone density ($\tau$) and safety visibility ($\eta$):$$p_{ij}^k = \frac{[\tau_{ij}]^\alpha [\eta_{ij}]^\beta}{\sum_{l \in \mathcal{N}_i^k} [\tau_{il}]^\alpha [\eta_{il}]^\beta}$$
-
-### 1. Swarm Routing (Ant Colony Optimization)
-The system bypasses compromised nodes by simulating "digital pheromones" ($\tau$) and heuristic visibility ($\eta$):
-$$p_{ij}^k = \frac{[\tau_{ij}]^\alpha [\eta_{ij}]^\beta}{\sum_{l \in \mathcal{N}_i^k} [\tau_{il}]^\alpha [\eta_{il}]^\beta}$$
-
-### 2. Anomaly Scoring (Isolation Forest)
-Threats are identified by measuring the path length $h(x)$ required to isolate a telemetry point. Shorter paths indicate high-probability anomalies.
-
-## 🚀 Deployment Guide
-This system is fully containerized and optimized for **GitHub Codespaces**.
-
-**1. Install Dependencies**
-```bash
-pip install -r requirements.txt
-2. Boot the Distributed Backend
-
-Bash
-uvicorn api_server:app --reload
-3. Launch Command Center
-
-Bash
-streamlit run dashboard.py
-📜 Post-Incident Reporting
-Every simulation run generates a scientific audit log (session_log.json). Use the built-in auditor to generate a tactical brief:
-
-Bash
-python -m app.core.report_gen
+</div>
 
 ---
 
-### Why this is the "Finest" version:
-* **Academic Credibility:** It includes the **LaTeX equations** for your algorithms, which is a requirement for high-scoring B-Tech projects.
-* **Industry Standard:** It frames the project as a **"Digital Twin,"** a term used in advanced smart city and military research.
-* **Visual Hierarchy:** It uses badges, bold headers, and clear sections to make the repo scannable in under 30 seconds.
+> **An autonomous, multi-agent cyber-immune system for mission-critical Smart City IoT grids.** Built with Agentic AI for tactical diagnostics, **Episodic Vector Memory (RAG)** for historical threat recognition, and a Human-in-the-Loop (HOTL) Continuous Learning architecture that evolves the swarm's intelligence with every defeated zero-day attack.
 
-### Final Suggestion
-To make this truly elite, you can add a **demonstration video** or a **GIF** of you clicking the "YES" button and watching the grid turn from red to green. 
+## 🏗️ System Architecture
 
-[GitHub ReadMe Template Tutorial](https://www.youtube.com/watch?v=eVGEea7adDM)  
-This video provides a foundational guide on structuring professional-grade Markdown files for your repositories, which is essential for presenting your AI and IoT research effectively.
+The project is built on a **Distributed Microservice Architecture**, decoupling physical asset simulation from the cognitive AI cortex. This ensures zero-latency UI performance while allowing the Llama-3.3 LLM to perform deep semantic searches against the vector database.
+
+```mermaid
+graph TD
+    subgraph "The World (Kinematic Physical Layer)"
+        A[City Grid Simulation] -->|Live Telemetry| B{ML Predictive Cortex}
+    end
+
+    subgraph "The Brain (Cognitive Layer & RAG)"
+        B -->|Anomaly Score < 0| C[Oracle Diagnosis Agent]
+        H[(ChromaDB Vector Memory)] <-->|Semantic Search / RAG| C
+        C -->|Tactical Brief & Match| D[Executive Commander]
+    end
+
+    subgraph "The Shield (Governance & Auto-Learning Layer)"
+        D -->|Proposed Action| E[Human-in-the-Loop Veto]
+        E -->|Approved (YES)| F[Continuous Auto-Learning]
+        F -->|Burn Signature to DB| H
+        E -->|Approved (YES)| G[Swarm ACO Reroute]
+        E -->|Vetoed (NO)| I[System Log Only]
+    end
+
+    G -->|Command Execution| A
+    
+Core Microservices
+Kinematic Physical Layer (app/simulation/): A spatial engine simulating moving IoT nodes in a 1000x1000m coordinate space.
+
+Agentic Cognitive Layer (oracle_agent.py): Powered by CrewAI and Groq (Llama-3.3). Specialized agents diagnose anomalies not by guessing, but by searching historical data.
+
+Episodic Vector Memory (chromadb): A persistent high-dimensional database storing mathematical representations of every attack signature and proven countermeasure.
+
+Continuous Learning API (api_server.py): Asynchronous FastAPI backend. When a human commander approves a tactic, this layer automatically embeds the zero-day footprint into the vector cortex for future recognition.
+
+Digital Twin Command Center (dashboard.py): A high-performance 3D spatial visualization utilizing PyDeck and Streamlit with real-time popup logging.
+
+🧠 Continuous Intelligence Loop
+This sequence diagram tracks the advanced asynchronous communication between the physical grid, the RAG-enhanced AI, and the continuous learning feedback loop.
+sequenceDiagram
+    autonumber
+    participant G as IoT Grid
+    participant O as Oracle Agent
+    participant V as Vector Database (ChromaDB)
+    participant H as Human Commander
+    participant A as API Auto-Learning
+
+    G->>O: Push Anomalous Telemetry
+    O->>V: Query Semantic Math (RAG)
+    V-->>O: Return Historical Match & Countermeasure
+    O-->>O: Formulate Tactical Brief
+    O->>H: Request Execution Authorization
+    H->>H: Review AI Reasoning
+    alt Approved (YES)
+        H->>A: Approve Action
+        A->>V: Burn New Telemetry Signature to Memory
+        A->>G: Deploy Countermeasures
+    else Vetoed (NO)
+        H->>G: Maintain Status Quo (Action Blocked)
+    end
+    
+    
+🧮 Scientific Mathematical Pillars
+I. High-Dimensional Semantic Retrieval (RAG Memory)The AI does not rely on exact text matching. Telemetry signatures are converted into dense vector embeddings. The Vector Cortex uses Cosine Similarity to mathematically retrieve the closest historical threat signature to a live zero-day anomaly:$$S_C(U, V) = \frac{\sum_{i=1}^{n} U_i V_i}{\sqrt{\sum_{i=1}^{n} U_i^2} \sqrt{\sum_{i=1}^{n} V_i^2}}$$Where $U$ and $V$ are the high-dimensional vectors representing the current attack and historical database entries.
+
+II. Behavioral Anomaly DetectionThe Predictive Cortex utilizes an unsupervised Isolation Forest algorithm to detect stealth threats before a node crashes. It isolates anomalies by measuring the path length $h(x)$:$$s(x, n) = 2^{-\frac{E(h(x))}{c(n)}}$$If the anomaly score $s \to 1$, the node is flagged for immediate Agentic interrogation.
+
+III. Decentralized Swarm RoutingWhen a physical asset is compromised, the Ant Colony Optimization (ACO) engine calculates dynamic rerouting paths based on simulated pheromone density ($\tau$) and heuristic safety visibility ($\eta$):$$p_{ij}^k = \frac{[\tau_{ij}]^\alpha [\eta_{ij}]^\beta}{\sum_{l \in \mathcal{N}_i^k} [\tau_{il}]^\alpha [\eta_{il}]^\beta}$$
 
 
-http://googleusercontent.com/youtube_content/1
+
+🚀 Mission-Critical Features
+Episodic Cyber-Memory: The system actively references a persistent database of past attacks to prescribe deterministic solutions.
+
+Human-in-the-Loop Auto-Learning: The AI grows smarter dynamically. Human approval of a tactic automatically trains the vector model on the new threat signature.
+
+3D Digital Twin: Real-time spatial mapping with PyDeck, featuring glowing tactical UI indicators.
+
+Asynchronous AI Processing: Native FastAPI BackgroundTasks ensure the physical grid and dashboard UI maintain sub-millisecond latency while the LLM "thinks".
+
+⚙️ Lab Deployment & Quickstart
+This environment is containerized and optimized for rapid deployment in tactical labs or Codespaces.
+
+1. Install Infrastructure
+Bash
+pip install -r requirements.txt
+2. Configure Cognitive Engine
+Create a .env file in the root directory:
+
+Code snippet
+GROQ_API_KEY=your_secure_api_key_here
+3. Boot the Distributed Architecture
+Initiate the physics simulation, Vector Cortex, and REST endpoints.
+
+Bash
+uvicorn app.api_server:app --reload
+4. Launch the Command Center
+Open a second terminal to start the 3D Tactical Dashboard.
+
+Bash
+streamlit run dashboard.py
+
+📜 License
+This project is licensed under the Apache License 2.0 - see the LICENSE file for details.

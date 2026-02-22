@@ -2,25 +2,42 @@
 # CITY CONNECT OMEGA - DEPENDENCIES
 # ==========================================
 
-# 1. Agentic AI & LLM Engine (Highly Stable Core)
+# 1. Agentic AI & LLM Engine
 crewai
 crewai-tools
 litellm
-pysqlite3-binary
+openai~=1.83.0
 python-dotenv
 
-# 2. Swarm Intelligence & Physics Simulation
+# 2. Episodic Vector Memory (RAG Cortex)
+chromadb
+sentence-transformers
+pysqlite3-binary
+
+# 3. Swarm Intelligence & Physics Simulation
 networkx
 numpy
 pandas
 ray
 
-# 3. Digital Twin Command Center (UI)
+# 4. Digital Twin Command Center (UI)
 streamlit
 plotly
+pydeck
 
-# 4. Web & Event Bus (For Phase 4 Deployment)
+# 5. FastAPI Backend & Async Routing
 fastapi
 uvicorn
 httpx
 kafka-python
+
+# 6. Infrastructure & Dependency Stabilizers
+apscheduler
+fastapi-sso
+email-validator
+tokenizers==0.20.3
+opentelemetry-api==1.34.1
+opentelemetry-sdk==1.34.1
+opentelemetry-exporter-otlp-proto-http==1.34.1
+opentelemetry-exporter-otlp-proto-common==1.34.1
+opentelemetry-exporter-otlp-proto-grpc==1.34.1

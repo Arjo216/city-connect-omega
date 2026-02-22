@@ -8,3 +8,43 @@
 {"timestamp": "2026-02-21T00:18:32.428121", "type": "AI_ANALYSIS_COMPLETE", "details": {"report_snippet": "**TACTICAL INTELLIGENCE BRIEF**\n\n**SITUATION REPORT**\n\nAs of the latest telemetry update, the City C"}}
 {"timestamp": "2026-02-21T00:24:46.061266", "type": "SYSTEM_BOOT", "details": "Physics engine and ML cortex started."}
 {"timestamp": "2026-02-21T00:24:51.860201", "type": "SYSTEM_BOOT", "details": "Physics engine and ML cortex started."}
+{"timestamp": "2026-02-22T20:12:34.867732", "type": "SYSTEM_BOOT", "details": "Physics engine and ML cortex started."}
+{"timestamp": "2026-02-22T20:12:40.367824", "type": "SYSTEM_BOOT", "details": "Physics engine and ML cortex started."}
+{"timestamp": "2026-02-22T20:13:24.165314", "type": "ATTACK_INJECTED", "details": {"target_node": 1, "type": "DDoS_ATTACK"}}
+{"timestamp": "2026-02-22T20:13:27.821103", "type": "ATTACK_INJECTED", "details": {"target_node": 0, "type": "DDoS_ATTACK"}}
+{"timestamp": "2026-02-22T20:13:33.218697", "type": "AI_ANALYSIS_COMPLETE", "details": {"report_snippet": "Tactical Intelligence Brief:\n\nCurrent Grid Status: Multiple IoT nodes compromised with high threat l"}}
+{"timestamp": "2026-02-22T20:13:48.402576", "type": "AUTO_LEARNING_TRIGGERED", "details": {"id": "incident_d8128aff", "signature": "Node 0: status=COMPROMISED, network_latency_ms=999.9, resource_capacity_pct=80.16630409218511, threat_level=0.95"}}
+{"timestamp": "2026-02-22T20:13:48.402909", "type": "HUMAN_DECISION", "details": {"choice": "YES", "result": "CMD: User APPROVED action. Grid integrity restored."}}
+{"timestamp": "2026-02-22T20:14:03.601294", "type": "ATTACK_INJECTED", "details": {"target_node": 1, "type": "DDoS_ATTACK"}}
+{"timestamp": "2026-02-22T20:14:05.749704", "type": "ATTACK_INJECTED", "details": {"target_node": 2, "type": "DDoS_ATTACK"}}
+{"timestamp": "2026-02-22T20:14:06.105737", "type": "ATTACK_INJECTED", "details": {"target_node": 4, "type": "DDoS_ATTACK"}}
+{"timestamp": "2026-02-22T20:14:09.170309", "type": "AI_ANALYSIS_COMPLETE", "details": {"report_snippet": "**Tactical Intelligence Brief**\n\n**Situation Summary:**\nMultiple IoT nodes within the City Connect O"}}
+{"timestamp": "2026-02-22T20:14:14.751650", "type": "AUTO_LEARNING_TRIGGERED", "details": {"id": "incident_5490f4c5", "signature": "Node 1: status=COMPROMISED, network_latency_ms=999.9, resource_capacity_pct=95.56543593938099, threat_level=0.95"}}
+{"timestamp": "2026-02-22T20:14:14.751841", "type": "HUMAN_DECISION", "details": {"choice": "YES", "result": "CMD: User APPROVED action. Grid integrity restored."}}
+{"timestamp": "2026-02-22T20:14:48.623684", "type": "ATTACK_INJECTED", "details": {"target_node": 3, "type": "DDoS_ATTACK"}}
+{"timestamp": "2026-02-22T20:14:52.376696", "type": "AI_ANALYSIS_COMPLETE", "details": {"report_snippet": "**Tactical Intelligence Brief**\n\n**Situation:** Grid node 3 is compromised with a threat level of 0."}}
+{"timestamp": "2026-02-22T20:15:01.344855", "type": "AUTO_LEARNING_TRIGGERED", "details": {"id": "incident_4d4e43cc", "signature": "Node 3: status=COMPROMISED, network_latency_ms=999.9, resource_capacity_pct=86.29821169777223, threat_level=0.95"}}
+{"timestamp": "2026-02-22T20:15:01.345082", "type": "HUMAN_DECISION", "details": {"choice": "YES", "result": "CMD: User APPROVED action. Grid integrity restored."}}
+{"timestamp": "2026-02-22T20:16:14.894185", "type": "AI_ANALYSIS_COMPLETE", "details": {"report_snippet": "Tactical Intelligence Brief:\n\nSubject: Multiple IoT Nodes Reporting Operational Status with Zero Thr"}}
+{"timestamp": "2026-02-22T20:16:17.655591", "type": "ATTACK_INJECTED", "details": {"target_node": 2, "type": "DDoS_ATTACK"}}
+{"timestamp": "2026-02-22T20:16:20.121836", "type": "ATTACK_INJECTED", "details": {"target_node": 1, "type": "DDoS_ATTACK"}}
+{"timestamp": "2026-02-22T20:16:22.835230", "type": "ATTACK_INJECTED", "details": {"target_node": 1, "type": "DDoS_ATTACK"}}
+{"timestamp": "2026-02-22T20:19:36.268557", "type": "AUTO_LEARNING_TRIGGERED", "details": {"id": "incident_f86a5208", "signature": "Unknown Anomaly"}}
+{"timestamp": "2026-02-22T20:19:36.268774", "type": "HUMAN_DECISION", "details": {"choice": "YES", "result": "CMD: User APPROVED action. Grid integrity restored."}}
+{"timestamp": "2026-02-22T20:19:52.221477", "type": "AI_ANALYSIS_COMPLETE", "details": {"report_snippet": "Tactical Intelligence Brief:\n\nSubject: Zero Threat Level Anomaly Across Multiple IoT Nodes\n\nExecutiv"}}
+{"timestamp": "2026-02-22T20:27:34.475568", "type": "SYSTEM_BOOT", "details": "Physics engine and ML cortex started."}
+{"timestamp": "2026-02-22T20:27:40.680657", "type": "SYSTEM_BOOT", "details": "Physics engine and ML cortex started."}
+{"timestamp": "2026-02-22T20:28:55.238478", "type": "ATTACK_INJECTED", "details": {"target_node": 0, "type": "DDoS_ATTACK"}}
+{"timestamp": "2026-02-22T20:29:03.424816", "type": "AI_ANALYSIS_COMPLETE", "details": {"report_snippet": "**Tactical Intelligence Brief**\n\n**Situation Summary:**\nThe current grid telemetry indicates that on"}}
+{"timestamp": "2026-02-22T20:29:12.552554", "type": "AUTO_LEARNING_TRIGGERED", "details": {"id": "incident_08c09f49", "signature": "Node 0: status=COMPROMISED, network_latency_ms=999.9, resource_capacity_pct=94.00353425168439, threat_level=0.95"}}
+{"timestamp": "2026-02-22T20:29:12.552716", "type": "HUMAN_DECISION", "details": {"choice": "YES", "result": "CMD: User APPROVED action. Grid integrity restored."}}
+{"timestamp": "2026-02-22T20:29:38.228489", "type": "ATTACK_INJECTED", "details": {"target_node": 1, "type": "DDoS_ATTACK"}}
+{"timestamp": "2026-02-22T20:29:59.152033", "type": "AI_ANALYSIS_COMPLETE", "details": {"report_snippet": "**Tactical Intelligence Brief**\n\n**Situation:** Grid telemetry indicates a COMPROMISED status at nod"}}
+{"timestamp": "2026-02-22T20:30:09.973675", "type": "HUMAN_DECISION", "details": {"choice": "NO", "result": "CMD: User VETOED action. Node remains compromised."}}
+{"timestamp": "2026-02-22T20:30:29.194738", "type": "ATTACK_INJECTED", "details": {"target_node": 0, "type": "DDoS_ATTACK"}}
+{"timestamp": "2026-02-22T20:30:34.590773", "type": "ATTACK_INJECTED", "details": {"target_node": 2, "type": "DDoS_ATTACK"}}
+{"timestamp": "2026-02-22T20:30:41.708670", "type": "AI_ANALYSIS_COMPLETE", "details": {"report_snippet": "**Tactical Intelligence Brief**\n\n**Situation Summary:**\nMultiple IoT nodes within the City Connect O"}}
+{"timestamp": "2026-02-22T20:30:52.890588", "type": "AUTO_LEARNING_TRIGGERED", "details": {"id": "incident_aa5815d5", "signature": "Node 0: status=COMPROMISED, network_latency_ms=999.9, resource_capacity_pct=94.00353425168439, threat_level=0.95"}}
+{"timestamp": "2026-02-22T20:30:52.890755", "type": "HUMAN_DECISION", "details": {"choice": "YES", "result": "CMD: User APPROVED action. Grid integrity restored."}}
+{"timestamp": "2026-02-22T20:31:10.452008", "type": "ATTACK_INJECTED", "details": {"target_node": 2, "type": "DDoS_ATTACK"}}
+{"timestamp": "2026-02-22T20:32:34.107038", "type": "AI_ANALYSIS_COMPLETE", "details": {"report_snippet": "**Tactical Intelligence Brief**\n\n**Situation:** Node 2 in the City Connect Omega defense grid has be"}}
