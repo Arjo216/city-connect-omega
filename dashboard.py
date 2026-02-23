@@ -197,5 +197,30 @@ with tab2:
 
 with tab3:
     st.markdown("### 📝 Core Architecture Logs")
+    
+    # --- DYNAMIC REPORT GENERATOR ---
+    report_text = f"🛡️ CITY CONNECT OMEGA - POST-INCIDENT TACTICAL REPORT\n"
+    report_text += f"========================================================\n"
+    report_text += f"System Timestamp : {time.strftime('%Y-%m-%d %H:%M:%S')}\n"
+    report_text += f"Grid Integrity   : {'COMPROMISED' if alerts else 'SECURE'}\n"
+    report_text += f"Agentic AI Model : Llama-3.3 (Groq)\n"
+    report_text += f"Vector Cortex    : ChromaDB (Episodic Memory Active)\n"
+    report_text += f"========================================================\n\n"
+    report_text += "IMMUTABLE MISSION LOGS:\n"
+    for log in system["logs"]:
+        report_text += f"> {log}\n"
+        
+    st.download_button(
+        label="📥 EXPORT FINAL TACTICAL REPORT (.TXT)",
+        data=report_text,
+        file_name=f"OMEGA_TACTICAL_REPORT_{int(time.time())}.txt",
+        mime="text/plain",
+        type="primary",
+        use_container_width=True
+    )
+    
+    st.divider()
+    # --------------------------------
+
     for log in reversed(system["logs"]):
         st.code(log, language="bash")
