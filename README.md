@@ -41,7 +41,8 @@ graph TD
     end
 
     G -->|Command Execution| A
-    
+```
+
 Core Microservices
 Kinematic Physical Layer (app/simulation/): A spatial engine simulating moving IoT nodes in a 1000x1000m coordinate space.
 
