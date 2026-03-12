@@ -43,15 +43,15 @@ graph TD
     G -->|Command Execution| A
 ```
 ### Core Microservices
-1. **Kinematic Physical Layer (app/simulation/):** A spatial engine simulating moving IoT nodes in a 1000x1000m coordinate space.
+**1. Kinematic Physical Layer (app/simulation/):** A spatial engine simulating moving IoT nodes in a 1000x1000m coordinate space.
 
 **2. Agentic Cognitive Layer (oracle_agent.py):** Powered by CrewAI and Groq (Llama-3.3). Specialized agents diagnose anomalies not by guessing, but by searching historical data.
 
-3. **Episodic Vector Memory (chromadb):** A persistent high-dimensional database storing mathematical representations of every attack signature and proven countermeasure.
+**3. Episodic Vector Memory (chromadb):** A persistent high-dimensional database storing mathematical representations of every attack signature and proven countermeasure.
 
-4. **Continuous Learning API (api_server.py):** Asynchronous FastAPI backend. When a human commander approves a tactic, this layer automatically embeds the zero-day footprint into the vector cortex for future recognition.
+**4. Continuous Learning API (api_server.py):** Asynchronous FastAPI backend. When a human commander approves a tactic, this layer automatically embeds the zero-day footprint into the vector cortex for future recognition.
 
-5. **Digital Twin Command Center (dashboard.py):** A high-performance 3D spatial visualization utilizing PyDeck and Streamlit with real-time popup logging.
+**5. Digital Twin Command Center (dashboard.py):** A high-performance 3D spatial visualization utilizing PyDeck and Streamlit with real-time popup logging.
 
 **🧠 Continuous Intelligence Loop**
 This sequence diagram tracks the advanced asynchronous communication between the physical grid, the RAG-enhanced AI, and the continuous learning feedback loop.
