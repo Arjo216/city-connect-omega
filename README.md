@@ -18,7 +18,7 @@
 
 The project is built on a **Distributed Microservice Architecture**, decoupling physical asset simulation from the cognitive AI cortex. This ensures zero-latency UI performance while allowing the Llama-3.3 LLM to perform deep semantic searches against the vector database. 
 Built as a demonstration of advanced Agentic AI cognitive architectures, vector memory integration, and cyber-physical defense systems.
-
+```mermaid
 graph TD
     subgraph "The World (Kinematic Physical Layer)"
         A["City Grid Simulation"] -->|Live Telemetry| B{"ML Predictive Cortex"}
