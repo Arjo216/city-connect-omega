@@ -23,21 +23,22 @@ Built as a demonstration of advanced Agentic AI cognitive architectures, vector 
 ```mermaid
 graph TD
     subgraph "The World (Kinematic Physical Layer)"
-        A[City Grid Simulation] -->|Live Telemetry| B{ML Predictive Cortex}
+        A["City Grid Simulation"] -->|Live Telemetry| B{"ML Predictive Cortex"}
     end
 
     subgraph "The Brain (Cognitive Layer & RAG)"
-        B -->|Anomaly Score < 0| C[Oracle Diagnosis Agent]
-        H[(ChromaDB Vector Memory)] <-->|Semantic Search / RAG| C
-        C -->|Tactical Brief & Match| D[Executive Commander]
+        B -->|Anomaly Score < 0| C["Oracle Diagnosis Agent"]
+        C -->|Query Semantic Math| H[("ChromaDB Vector Memory")]
+        H -->|Historical Match| C
+        C -->|Tactical Brief & Match| D["Executive Commander"]
     end
 
     subgraph "The Shield (Governance & Auto-Learning Layer)"
-        D -->|Proposed Action| E[Human-in-the-Loop Veto]
-        E -->|Approved (YES)| F[Continuous Auto-Learning]
+        D -->|Proposed Action| E["Human-in-the-Loop Veto"]
+        E -->|Approved (YES)| F["Continuous Auto-Learning"]
         F -->|Burn Signature to DB| H
-        E -->|Approved (YES)| G[Swarm ACO Reroute]
-        E -->|Vetoed (NO)| I[System Log Only]
+        E -->|Approved (YES)| G["Swarm ACO Reroute"]
+        E -->|Vetoed (NO)| I["System Log Only"]
     end
 
     G -->|Command Execution| A
