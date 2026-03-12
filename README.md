@@ -117,23 +117,23 @@ $$p_{ij}^k = \frac{[\tau_{ij}]^\alpha [\eta_{ij}]^\beta}{\sum_{l \in \mathcal{N}
 ### ⚙️ Lab Deployment & Quickstart
 This environment is containerized and optimized for rapid deployment in tactical labs or Codespaces.
 
-**1. Install Infrastructure**
+**1. Install Infrastructure:**
 ```Bash
 pip install -r requirements.txt
 ```
-**2. Configure Cognitive Engine**
+**2. Configure Cognitive Engine:**
 Create a .env file in the root directory:
 
 ```Code snippet
 GROQ_API_KEY=your_secure_api_key_here
 ```
-**3. Boot the Distributed Architecture**
+**3. Boot the Distributed Architecture:**
 Initiate the physics simulation, Vector Cortex, and REST endpoints.
 
 ```Bash
 uvicorn app.api_server:app --reload
 ```
-**4. Launch the Command Center**
+**4. Launch the Command Center:**
 Open a second terminal to start the 3D Tactical Dashboard.
 
 ```Bash
