@@ -122,7 +122,7 @@ This environment is containerized and optimized for rapid deployment in tactical
 pip install -r requirements.txt
 ```
 **2. Configure Cognitive Engine:**
-Create a .env file in the root directory:
+Create a .env file in the root directory.
 
 ```Code snippet
 GROQ_API_KEY=your_secure_api_key_here
