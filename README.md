@@ -42,6 +42,8 @@ graph TD
 
     G -->|Command Execution| A
 ```
+---
+
 ### Core Microservices
 **1. Kinematic Physical Layer (app/simulation/):** A spatial engine simulating moving IoT nodes in a 1000x1000m coordinate space.
 
@@ -76,7 +78,8 @@ sequenceDiagram
     else Vetoed (NO)
         H->>G: Maintain Status Quo (Action Blocked)
     end
-    
+
+---
     
 ### 🧮 Scientific Mathematical Pillars
 **I. High-Dimensional Semantic Retrieval (RAG Memory):** The AI does not rely on exact text matching. Telemetry signatures are converted into dense vector embeddings. The Vector Cortex uses Cosine Similarity to mathematically retrieve the closest historical threat signature to a live zero-day anomaly:$$S_C(U, V) = \frac{\sum_{i=1}^{n} U_i V_i}{\sqrt{\sum_{i=1}^{n} U_i^2} \sqrt{\sum_{i=1}^{n} V_i^2}}$$Where $U$ and $V$ are the high-dimensional vectors representing the current attack and historical database entries.
@@ -84,7 +87,6 @@ sequenceDiagram
 **II. Behavioral Anomaly Detection:** The Predictive Cortex utilizes an unsupervised Isolation Forest algorithm to detect stealth threats before a node crashes. It isolates anomalies by measuring the path length $h(x)$:$$s(x, n) = 2^{-\frac{E(h(x))}{c(n)}}$$If the anomaly score $s \to 1$, the node is flagged for immediate Agentic interrogation.
 
 **III. Decentralized Swarm Routing:** When a physical asset is compromised, the Ant Colony Optimization (ACO) engine calculates dynamic rerouting paths based on simulated pheromone density ($\tau$) and heuristic safety visibility ($\eta$):$$p_{ij}^k = \frac{[\tau_{ij}]^\alpha [\eta_{ij}]^\beta}{\sum_{l \in \mathcal{N}_i^k} [\tau_{il}]^\alpha [\eta_{il}]^\beta}$$
-
 
 
 ### 🚀 Mission-Critical Features
@@ -121,5 +123,5 @@ Open a second terminal to start the 3D Tactical Dashboard.
 ```Bash
 streamlit run dashboard.py
 ```
-📜 License
+### 📜 License
 This project is licensed under the Apache License 2.0 - see the LICENSE file for details.
