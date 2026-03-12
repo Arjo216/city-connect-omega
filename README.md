@@ -43,17 +43,17 @@ graph TD
     G -->|Command Execution| A
 ```
 ### Core Microservices
-* 1.Kinematic Physical Layer (app/simulation/): A spatial engine simulating moving IoT nodes in a 1000x1000m coordinate space.
+* 1. Kinematic Physical Layer (app/simulation/): A spatial engine simulating moving IoT nodes in a 1000x1000m coordinate space.
 
-Agentic Cognitive Layer (oracle_agent.py): Powered by CrewAI and Groq (Llama-3.3). Specialized agents diagnose anomalies not by guessing, but by searching historical data.
+* 2. Agentic Cognitive Layer (oracle_agent.py): Powered by CrewAI and Groq (Llama-3.3). Specialized agents diagnose anomalies not by guessing, but by searching historical data.
 
-Episodic Vector Memory (chromadb): A persistent high-dimensional database storing mathematical representations of every attack signature and proven countermeasure.
+* 3. Episodic Vector Memory (chromadb): A persistent high-dimensional database storing mathematical representations of every attack signature and proven countermeasure.
 
-Continuous Learning API (api_server.py): Asynchronous FastAPI backend. When a human commander approves a tactic, this layer automatically embeds the zero-day footprint into the vector cortex for future recognition.
+* 4. Continuous Learning API (api_server.py): Asynchronous FastAPI backend. When a human commander approves a tactic, this layer automatically embeds the zero-day footprint into the vector cortex for future recognition.
 
-Digital Twin Command Center (dashboard.py): A high-performance 3D spatial visualization utilizing PyDeck and Streamlit with real-time popup logging.
+* 5. Digital Twin Command Center (dashboard.py): A high-performance 3D spatial visualization utilizing PyDeck and Streamlit with real-time popup logging.
 
-🧠 Continuous Intelligence Loop
+**🧠 Continuous Intelligence Loop**
 This sequence diagram tracks the advanced asynchronous communication between the physical grid, the RAG-enhanced AI, and the continuous learning feedback loop.
 sequenceDiagram
     autonumber
@@ -78,8 +78,8 @@ sequenceDiagram
     end
     
     
-🧮 Scientific Mathematical Pillars
-I. High-Dimensional Semantic Retrieval (RAG Memory)The AI does not rely on exact text matching. Telemetry signatures are converted into dense vector embeddings. The Vector Cortex uses Cosine Similarity to mathematically retrieve the closest historical threat signature to a live zero-day anomaly:$$S_C(U, V) = \frac{\sum_{i=1}^{n} U_i V_i}{\sqrt{\sum_{i=1}^{n} U_i^2} \sqrt{\sum_{i=1}^{n} V_i^2}}$$Where $U$ and $V$ are the high-dimensional vectors representing the current attack and historical database entries.
+### 🧮 Scientific Mathematical Pillars
+I. **High-Dimensional Semantic Retrieval (RAG Memory):** The AI does not rely on exact text matching. Telemetry signatures are converted into dense vector embeddings. The Vector Cortex uses Cosine Similarity to mathematically retrieve the closest historical threat signature to a live zero-day anomaly:$$S_C(U, V) = \frac{\sum_{i=1}^{n} U_i V_i}{\sqrt{\sum_{i=1}^{n} U_i^2} \sqrt{\sum_{i=1}^{n} V_i^2}}$$Where $U$ and $V$ are the high-dimensional vectors representing the current attack and historical database entries.
 
 II. Behavioral Anomaly DetectionThe Predictive Cortex utilizes an unsupervised Isolation Forest algorithm to detect stealth threats before a node crashes. It isolates anomalies by measuring the path length $h(x)$:$$s(x, n) = 2^{-\frac{E(h(x))}{c(n)}}$$If the anomaly score $s \to 1$, the node is flagged for immediate Agentic interrogation.
 
