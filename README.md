@@ -90,13 +90,14 @@ sequenceDiagram
 
 
 ### 🚀 Mission-Critical Features
-**Episodic Cyber-Memory:** The system actively references a persistent database of past attacks to prescribe deterministic solutions.
+* **Episodic Cyber-Memory:** The system actively references a persistent database of past attacks to prescribe deterministic solutions.
 
-**Human-in-the-Loop Auto-Learning:** The AI grows smarter dynamically. Human approval of a tactic automatically trains the vector model on the new threat signature.
+* **Human-in-the-Loop Auto-Learning:** The AI grows smarter dynamically. Human approval of a tactic automatically trains the vector model on the new threat signature.
 
-**3D Digital Twin:** Real-time spatial mapping with PyDeck, featuring glowing tactical UI indicators.
+* **3D Digital Twin:** Real-time spatial mapping with PyDeck, featuring glowing tactical UI indicators.
 
-**Asynchronous AI Processing:** Native FastAPI BackgroundTasks ensure the physical grid and dashboard UI maintain sub-millisecond latency while the LLM "thinks".
+* **Asynchronous AI Processing:** Native FastAPI BackgroundTasks ensure the physical grid and dashboard UI maintain sub-millisecond latency while the LLM "thinks".
+
 
 ### ⚙️ Lab Deployment & Quickstart
 This environment is containerized and optimized for rapid deployment in tactical labs or Codespaces.
@@ -123,5 +124,6 @@ Open a second terminal to start the 3D Tactical Dashboard.
 ```Bash
 streamlit run dashboard.py
 ```
+
 ### 📜 License
 This project is licensed under the Apache License 2.0 - see the LICENSE file for details.
