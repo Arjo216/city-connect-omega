@@ -41,9 +41,9 @@ graph TD
     end
 
     G -->|Command Execution| A
-
-Core Microservices
-Kinematic Physical Layer (app/simulation/): A spatial engine simulating moving IoT nodes in a 1000x1000m coordinate space.
+```
+### Core Microservices
+* 1.Kinematic Physical Layer (app/simulation/): A spatial engine simulating moving IoT nodes in a 1000x1000m coordinate space.
 
 Agentic Cognitive Layer (oracle_agent.py): Powered by CrewAI and Groq (Llama-3.3). Specialized agents diagnose anomalies not by guessing, but by searching historical data.
 
