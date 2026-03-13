@@ -20,26 +20,60 @@ The project is built on a **Distributed Microservice Architecture**, decoupling 
 
 ```mermaid
 graph TD
-    subgraph "The World (Kinematic Physical Layer)"
-        A["City Grid Simulation"] -->|Live Telemetry| B{"ML Predictive Cortex"}
+    %% ----------------------------------
+    %% CUSTOM CYBERPUNK CSS STYLES
+    %% ----------------------------------
+    classDef physical fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#fff,rx:5px,ry:5px;
+    classDef mlCortex fill:#1e1b4b,stroke:#8b5cf6,stroke-width:2px,color:#fff;
+    classDef agent fill:#042f2e,stroke:#2dd4bf,stroke-width:2px,color:#fff;
+    classDef memory fill:#4c0519,stroke:#fb7185,stroke-width:2px,color:#fff;
+    classDef human fill:#451a03,stroke:#fbbf24,stroke-width:2px,color:#fff;
+    classDef action fill:#064e3b,stroke:#34d399,stroke-width:2px,color:#fff;
+    classDef alert fill:#450a0a,stroke:#ef4444,stroke-width:2px,color:#fff,stroke-dasharray: 5 5;
+
+    %% ----------------------------------
+    %% ARCHITECTURE LAYERS
+    %% ----------------------------------
+    subgraph Layer1 ["🌍 The World (Kinematic Physical Layer)"]
+        A["fa:fa-city City Grid Simulation"]:::physical
+        B{"fa:fa-bolt ML Predictive Cortex"}:::mlCortex
     end
 
-    subgraph "The Brain (Cognitive Layer & RAG)"
-        B -->|Anomaly Score < 0| C["Oracle Diagnosis Agent"]
-        C -->|Query Semantic Math| H[("ChromaDB Vector Memory")]
-        H -->|Historical Match| C
-        C -->|Tactical Brief & Match| D["Executive Commander"]
+    subgraph Layer2 ["🧠 The Brain (Cognitive Layer & RAG)"]
+        C{{"fa:fa-brain Oracle Diagnosis Agent"}}:::agent
+        H[("fa:fa-database ChromaDB Vector Memory")]:::memory
+        D["fa:fa-file-code Executive Commander Brief"]:::physical
     end
 
-    subgraph "The Shield (Governance & Auto-Learning Layer)"
-        D -->|Proposed Action| E["Human-in-the-Loop Veto"]
-        E -->|Approved (YES)| F["Continuous Auto-Learning"]
-        F -->|Burn Signature to DB| H
-        E -->|Approved (YES)| G["Swarm ACO Reroute"]
-        E -->|Vetoed (NO)| I["System Log Only"]
+    subgraph Layer3 ["🛡️ The Shield (Governance & Auto-Learning)"]
+        E{"fa:fa-user-shield Human-in-the-Loop Veto"}:::human
+        F["fa:fa-sync Continuous Auto-Learning"]:::action
+        G["fa:fa-project-diagram Swarm ACO Reroute"]:::action
+        I["fa:fa-terminal System Log Only"]:::alert
     end
 
-    G -->|Command Execution| A
+    %% ----------------------------------
+    %% COMMUNICATION PROTOCOLS (EDGES)
+    %% ----------------------------------
+    A == "Live Telemetry Stream" ==> B
+    B -- "Anomaly Score < 0" --> C
+    
+    %% RAG Memory Loop (Dotted Lines)
+    C -. "Query Semantic Math" .-> H
+    H -. "Historical Match (Cosine Sim)" .-> C
+    
+    C == "Tactical Brief & Match" ==> D
+    D --> E
+
+    %% Branching Logic
+    E == "✅ Approved (YES)" ==> F
+    F -- "Burn Signature to DB" --> H
+    
+    E == "✅ Approved (YES)" ==> G
+    E -. "❌ Vetoed (NO)" .-> I
+
+    %% The Healing Loop
+    G == "Command Execution & Healing" ==> A
 ```
 ---
 
