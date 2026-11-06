@@ -90,7 +90,6 @@ graph TD
 
 ### 🧠 Continuous Intelligence Loop
 This sequence diagram tracks the advanced asynchronous communication between the physical grid, the RAG-enhanced AI, and the continuous learning feedback loop.
-```
 sequenceDiagram
     autonumber
     participant G as IoT Grid
@@ -112,7 +111,6 @@ sequenceDiagram
     else Vetoed (NO)
         H->>G: Maintain Status Quo (Action Blocked)
     end
-```
 ---
     
 ### 🧮 Scientific Mathematical Pillars
