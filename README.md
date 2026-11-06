@@ -112,7 +112,7 @@ sequenceDiagram
     else Vetoed (NO)
         H->>G: Maintain Status Quo (Action Blocked)
     end
-
+```
 ---
     
 ### 🧮 Scientific Mathematical Pillars
